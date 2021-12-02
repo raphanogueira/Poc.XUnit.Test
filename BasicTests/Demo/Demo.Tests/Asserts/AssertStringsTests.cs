@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
-namespace Demo.Tests
+namespace Demo.Tests.Asserts
 {
     public sealed class AssertStringsTests
     {

@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
+﻿using Xunit;
 
-namespace Demo.Tests
+namespace Demo.Tests.Asserts
 {
     public sealed class AssertNumbersTests
     {
         [Fact]
         public void Calculator_Sum_MustBeEquals()
         {
-            var calculator = new Calculator();
+            var calculator = new Demo.Calculator();
 
             var result = calculator.Sum(1, 2);
 
@@ -20,11 +17,11 @@ namespace Demo.Tests
         [Fact]
         public void Calculator_Sum_MustNotBeEquals()
         {
-            var calculator = new Calculator();
+            var calculator = new Demo.Calculator();
 
-            var result = calculator.Sum(1.13123123123, 2.2312313123);
+            var result = calculator.Sum(1.13123123123m, 2.2312313123m);
 
-            Assert.NotEqual(3.3, result, 1);
+            Assert.NotEqual(3.3m, result, 1);
         }
     }
 }

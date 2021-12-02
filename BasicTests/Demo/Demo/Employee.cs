@@ -6,7 +6,7 @@ namespace Demo
     public abstract class Person
     {
         public string Name { get; protected set; }
-        public string Apelido { get; set; }
+        public string LastName { get; set; }
     }
 
     public sealed class Employee : Person
@@ -28,7 +28,7 @@ namespace Demo
 
             Salary = salary;
             if (Salary < 2000) ProfessionalTierType = ProfessionalTierType.Junior;
-            else if (Salary >= 2000 && Salary <= 8000) ProfessionalTierType = ProfessionalTierType.Pleno;
+            else if (Salary >= 2000 && Salary < 8000) ProfessionalTierType = ProfessionalTierType.Pleno;
             else if (Salary >= 8000) ProfessionalTierType = ProfessionalTierType.Senior;
         }
 
@@ -37,7 +37,7 @@ namespace Demo
             var basicHabilities = new List<string>()
             {
                 "Lógica de Programação",
-                "OPP"
+                "OOP"
             };
 
             Habilities = basicHabilities;
@@ -68,6 +68,6 @@ namespace Demo
 
     public sealed class EmployeeFactory
     {
-        public static Employee Criar(string name, double salary) => new Employee(name, salary);
+        public static Employee Create(string name, double salary) => new Employee(name, salary);
     }
 }

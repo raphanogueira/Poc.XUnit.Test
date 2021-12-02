@@ -2,8 +2,8 @@
 {
     public sealed class Calculator
     {
-        public double Sum(double v1, double v2) => v1 + v2;
+        public decimal Sum(decimal v1, decimal v2) => v1 + v2;
 
-        public double Div(double v1, double v2) => v1 / v2;
+        public decimal Div(decimal v1, decimal v2) => v1 / v2;
     }
 }
